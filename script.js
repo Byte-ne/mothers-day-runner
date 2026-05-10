@@ -371,8 +371,14 @@ function gameLoop() {
 
 // --- UI Logic ---
 function showScreen(screenId) {
-    Object.values(screens).forEach(s => s.classList.remove('active'));
-    screens[screenId].classList.add('active');
+    const activeScreens = Object.values(screens).filter(s => s.classList.contains('active'));
+    activeScreens.forEach(s => s.classList.remove('active'));
+    
+    if (activeScreens.length > 0) {
+        setTimeout(() => screens[screenId].classList.add('active'), 300);
+    } else {
+        screens[screenId].classList.add('active');
+    }
 }
 
 // Intro typing animation

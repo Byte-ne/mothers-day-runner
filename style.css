@@ -20,9 +20,11 @@
 }
 
 body, html {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
+    margin: 0;
+    padding: 0;
     background: linear-gradient(-45deg, #ff9a9e, #fecfef, #ffdde1, #ff7eb3);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
@@ -37,8 +39,8 @@ body, html {
 
 #game-container {
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
 }
 
 canvas {
@@ -51,8 +53,8 @@ canvas {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     pointer-events: none; /* Let clicks pass through by default */
 }
 
