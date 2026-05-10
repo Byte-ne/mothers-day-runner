@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mother's Day Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- The Game Canvas -->
+        <canvas id="gameCanvas"></canvas>
+        
+        <!-- UI Overlay -->
+        <div id="ui-layer">
+            
+            <!-- Intro Screen -->
+            <div id="screen-intro" class="screen active glass-panel">
+                <div class="content">
+                    <h1 id="typing-text"></h1>
+                    <button id="btn-start-intro" class="glow-button hidden">Play</button>
+                </div>
+            </div>
+
+            <!-- Name Input Screen -->
+            <div id="screen-name" class="screen glass-panel">
+                <div class="content">
+                    <h2>Who is the World's Best Mom?</h2>
+                    <input type="text" id="mom-name-input" placeholder="Enter Mom's Name..." autocomplete="off">
+                    <button id="btn-start-game" class="glow-button">Start Game</button>
+                </div>
+            </div>
+
+            <!-- Game HUD -->
+            <div id="screen-hud" class="screen pointer-events-none">
+                <div class="hud-top">
+                    <div class="health-container glass-panel-sm">
+                        <div id="health-bar-fill"></div>
+                        <span class="emoji-icon">❤️</span>
+                    </div>
+                    <div class="score-container glass-panel-sm">
+                        <span id="score-text">0</span>
+                        <span class="emoji-icon">✨</span>
+                    </div>
+                </div>
+                <div class="hud-combo">
+                    <span id="combo-text"></span>
+                </div>
+                <button id="btn-pause" class="icon-button pointer-events-auto">⏸️</button>
+            </div>
+
+            <!-- Pause Menu -->
+            <div id="screen-pause" class="screen glass-panel">
+                <div class="content">
+                    <h2>Paused</h2>
+                    <button id="btn-resume" class="glow-button">Resume</button>
+                    <button id="btn-restart-pause" class="outline-button">Restart</button>
+                </div>
+            </div>
+
+            <!-- Game Over Screen -->
+            <div id="screen-gameover" class="screen glass-panel">
+                <div class="content">
+                    <h2>Game Over</h2>
+                    <div class="final-score-display">
+                        <span id="final-score">0</span> points
+                    </div>
+                    <p id="gameover-message" class="heartwarming-message"></p>
+                    <button id="btn-restart" class="glow-button">Play Again</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
